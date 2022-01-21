@@ -12,7 +12,7 @@ const News = (props) => {
 
   const updateNews = async (pageNo) => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapinodejs.herokuapp.com/news-api?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setLoading(true);
@@ -30,7 +30,7 @@ const News = (props) => {
   }, []);
 
   const fetchMoreData = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${
+    const url = `https://newsapinodejs.herokuapp.com/news-api?country=${
       props.country
     }&category=${props.category}&apikey=${props.apiKey}&page=${
       page + 1
@@ -50,9 +50,9 @@ const News = (props) => {
         </h2>
         {loading && <Spinner />}
         <InfiniteScroll
-          dataLength={articles.length}
+          dataLength={articles?.length}
           next={fetchMoreData}
-          hasMore={articles.length !== totalResults}
+          hasMore={articles?.length !== totalResults}
           loader={<Spinner />}
         >
           <div className="my-3">
