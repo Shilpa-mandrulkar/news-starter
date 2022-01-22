@@ -28,13 +28,13 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+    document.title = `${capitalizeFirstLetter(props.category)} - Global News`;
     updateNews();
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+    document.title = `${capitalizeFirstLetter(props.category)} - Global News`;
     updateNews();
     // eslint-disable-next-line
   }, [props.country]);
@@ -54,8 +54,14 @@ const News = (props) => {
     <>
       <div className="container">
         <h2 className="text-center" style={{ margin: '70px' }}>
-          NewMonkey-Top {props.category} Headlines
+          Global News -Top {props.category} Headlines
         </h2>
+        {articles.length == 0 && !loading && (
+          <h2 className="text-center" style={{ margin: '70px' }}>
+            Sorry We do not have any news in this specific section. Please try
+            in different domain or general categories !!!
+          </h2>
+        )}
         {loading && <Spinner />}
         <InfiniteScroll
           dataLength={articles?.length}

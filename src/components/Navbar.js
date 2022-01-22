@@ -7,7 +7,7 @@ const navbar = (props) => {
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/general">
-            NewsMonkey
+            <h5>Global News</h5>
           </Link>
           <button
             className="navbar-toggler"
@@ -66,6 +66,8 @@ const navbar = (props) => {
             </ul>
             <select
               id="country"
+              className="form-select w-auto"
+              aria-label="Default select example"
               name="country"
               onChange={props.setCountryCode}
               value={props.countryCode}
