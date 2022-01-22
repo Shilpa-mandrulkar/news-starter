@@ -54,15 +54,6 @@ const navbar = (props) => {
               <li className="nav-item navigation-item">
                 <NavLink
                   className="nav-link"
-                  to="/general"
-                  activeClassName="active"
-                >
-                  General
-                </NavLink>
-              </li>
-              <li className="nav-item navigation-item">
-                <NavLink
-                  className="nav-link"
                   to="/health"
                   activeClassName="active"
                 >
