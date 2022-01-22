@@ -21,7 +21,7 @@ const NewsItems = (props) => {
           alt="..."
         />
         <div className="card-body">
-          <h5 className="card-title">{title?.slice(0, 41)}...</h5>
+          <h5 className="card-title">{title}...</h5>
 
           <p className="card-text">{description?.slice(0, 75)}...</p>
           <p className="card-text">
