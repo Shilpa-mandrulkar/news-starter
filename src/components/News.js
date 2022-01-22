@@ -10,9 +10,13 @@ const News = (props) => {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   const updateNews = async (pageNo) => {
     props.setProgress(10);
-    const url = `https://newsapinodejs.herokuapp.com/news-api?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapinodejs.herokuapp.com/news-api?country=${props.country}&category=${props.category}&page=${page}&pageSize=${props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setLoading(true);
@@ -24,17 +28,21 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `${props.category}- NewsMonkey`;
+    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
     updateNews();
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+    updateNews();
+    // eslint-disable-next-line
+  }, [props.country]);
+
   const fetchMoreData = async () => {
     const url = `https://newsapinodejs.herokuapp.com/news-api?country=${
       props.country
-    }&category=${props.category}&apikey=${props.apiKey}&page=${
-      page + 1
-    }&pageSize=${props.pageSize}`;
+    }&category=${props.category}&page=${page + 1}&pageSize=${props.pageSize}`;
     setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -53,7 +61,6 @@ const News = (props) => {
           dataLength={articles?.length}
           next={fetchMoreData}
           hasMore={articles?.length !== totalResults}
-          loader={<Spinner />}
         >
           <div className="my-3">
             <div className="row mx-2">

@@ -25,7 +25,7 @@ const NewsItems = (props) => {
 
           <p className="card-text">{description?.slice(0, 88)}...</p>
           <p className="card-text">
-            <small class="text-muted">
+            <small className="text-muted">
               By {!author ? 'Unknown' : author} on{' '}
               {new Date(date).toGMTString()}
             </small>

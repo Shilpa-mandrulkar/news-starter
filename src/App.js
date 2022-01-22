@@ -10,12 +10,16 @@ const App = () => {
   const pageSize = 15;
   const apiKey = 'b0b1de14457e4cf89fd4d163ede57e05';
   const [progress, setProgress] = useState(10);
+  const [country, setCountry] = useState('in');
+  const setCountryCode = (code) => {
+    setCountry(code.target.value);
+  };
 
   return (
     <Router>
       <div>
         <LoadingBar color="#f11946" progress={progress} />
-        <Navbar />
+        <Navbar setCountryCode={setCountryCode} countryCode={country} />
 
         <Routes>
           <Route
@@ -28,7 +32,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="General"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="General"
               />
             }
@@ -43,7 +47,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="Business"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Business"
               />
             }
@@ -58,7 +62,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="Entertainment"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Entertainment"
               />
             }
@@ -73,7 +77,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="General"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="General"
               />
             }
@@ -88,7 +92,7 @@ const App = () => {
                 apiKey={apiKey}
                 key=""
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Health"
               />
             }
@@ -103,7 +107,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="Health"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Science"
               />
             }
@@ -118,7 +122,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="Sports"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Sports"
               />
             }
@@ -133,7 +137,7 @@ const App = () => {
                 apiKey={apiKey}
                 key="Technology"
                 pageSize={pageSize}
-                country="in"
+                country={country}
                 category="Technology"
               />
             }
