@@ -57,10 +57,10 @@ const News = (props) => {
           Global News -Top {props.category} Headlines
         </h2>
         {articles.length == 0 && !loading && (
-          <h2 className="text-center" style={{ margin: '70px' }}>
+          <h5 className="text-center" style={{ margin: '70px' }}>
             Sorry We do not have any news in this specific section. Please try
             in different domain or general categories !!!
-          </h2>
+          </h5>
         )}
         {loading && <Spinner />}
         <InfiniteScroll

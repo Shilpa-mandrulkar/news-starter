@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const navbar = (props) => {
   return (
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/general">
+          <NavLink className="navbar-brand" to="/general">
             <h5>Global News</h5>
-          </Link>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,46 +22,79 @@ const navbar = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/general">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  aria-current="page"
+                  to="/general"
+                  activeClassName="active"
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/business">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/business"
+                  activeClassName="active"
+                >
                   Business
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/entertainment"
+                  activeClassName="active"
+                >
                   Entertainment
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/general">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/general"
+                  activeClassName="active"
+                >
                   General
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/health">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/health"
+                  activeClassName="active"
+                >
                   Health
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/science">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/science"
+                  activeClassName="active"
+                >
                   Science
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/sports">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/sports"
+                  activeClassName="active"
+                >
                   Sports
-                </Link>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/technology">
+              <li className="nav-item navigation-item">
+                <NavLink
+                  className="nav-link"
+                  to="/technology"
+                  activeClassName="active"
+                >
                   Technology
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <select
